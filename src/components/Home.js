@@ -5,52 +5,10 @@ import axios from 'axios'
 import {DropdownButton, Dropdown} from 'react-bootstrap'
 import isEmpty from 'is-empty'
 import {Titulo} from './styledCommon'
-
-const initialData = [];
-const dataGetReducer = (state, action) => {
-    switch (action.type) {
-      case 'FETCH_INIT':
-        return {
-          ...state,
-          isLoading: true,
-          isError: false
-        };
-      case 'FETCH_SUCCESS':
-        return {
-          ...state,
-          isLoading: false,
-          isError: false,
-          data: action.data.data,
-          currentData: action.data.data.registros
-        };
-      case 'FETCH_FAILURE':
-        return {
-          ...state,
-          isLoading: false,
-          isError: true,
-        };
-        case 'SET_CURRENT_DATA':
-        return {
-            ...state,
-            isLoading: false,
-            isError: true,
-            currentData: action.data,
-            titulo: action.titulo
-        };
-      default:
-        throw new Error();
-    }
-  };
+import * as Reducer from '../hookReducer/DataRecordsReducer'
 
 const Home=()=> {
-    const [fetchState, localDispatch] = useReducer(dataGetReducer, {
-        isLoading: false,
-        isError: false,
-        data: initialData,
-        currentData: {},
-        titulo: "Reporde de Todos los registros"
-    
-    });
+    const [fetchState, localDispatch] = useReducer(Reducer.DataRecordsReducer, Reducer.initialState);
 
     const leyendasTitulo=[
         {"id":"registros", "description":"Reporte de Todos los registros"},
@@ -61,7 +19,7 @@ const Home=()=> {
 
     const handleSelect=(e)=>{
         localDispatch({ type: 'SET_CURRENT_DATA', data: fetchState.data[e], titulo:leyendasTitulo.find(x=>x.id==e).description });
-      }
+    }
 
     useEffect(() => {
         localDispatch({ type: 'FETCH_INIT' });
