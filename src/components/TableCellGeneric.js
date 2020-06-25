@@ -1,5 +1,6 @@
 import React from "react";
 import {formatDDMMYYYY} from "../helpers/dateHelper";
+import PropTypes from "prop-types";
 
 export default function TableCellGeneric(props) {
     const { cellData, columnsOrder } = props;
@@ -13,3 +14,8 @@ export default function TableCellGeneric(props) {
             })
     )
 }
+
+TableCellGeneric.propTypes = {
+    cellData: PropTypes.object,
+    columnsOrder: PropTypes.arrayOf(PropTypes.string),
+  };

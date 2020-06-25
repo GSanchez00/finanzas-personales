@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Modal} from 'react-bootstrap';
+import PropTypes from "prop-types";
 
 export default function GenericModal({tittle, message, show, handleClose}) {
     return (
@@ -18,3 +19,10 @@ export default function GenericModal({tittle, message, show, handleClose}) {
       </>
     );
   }
+
+  GenericModal.propTypes = {
+    tittle: PropTypes.string,
+    message: PropTypes.string,
+    show: PropTypes.bool,
+    handleClose: PropTypes.func
+  };

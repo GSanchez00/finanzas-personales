@@ -75,8 +75,6 @@ const Home=()=> {
     },[]);
     
 
-    console.log("reports**************************")
-    console.log(fetchState)
     return(
       <>
         <div style={{margin:"5%"}}>

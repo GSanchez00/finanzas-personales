@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactLoading from "react-loading";
+import PropTypes from "prop-types";
 
 const Loading = props => {
     return(
@@ -35,3 +36,8 @@ const Loading = props => {
   };
 
   export default Loading
+
+
+  Loading.propTypes = {
+    visible: PropTypes.bool
+  };

@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar, Button, Nav } from 'react-bootstrap'
 import logo from '../logo.png'
 import { NavLink } from 'react-router-dom'
+import PropTypes from "prop-types";
 
 const NavMenu = ({auth, logout}) => {
     let isAuthenticated=auth.user && auth.user.userType;
@@ -41,3 +42,7 @@ const NavMenu = ({auth, logout}) => {
 
  export default NavMenu
 
+ NavMenu.propTypes = {
+    auth: PropTypes.object,
+    logout: PropTypes.func
+  };

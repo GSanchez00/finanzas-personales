@@ -5,6 +5,7 @@ import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import {authenticate} from '../../store/actions/authAction'
+import {USER_TYPE} from '../../constants/enums'
 
 library.add(faUser);
 
@@ -22,7 +23,7 @@ const Login = ({auth}) =>
     };
     
     if(auth.isAuthenticated){
-        if(auth.user.userType.id===1)
+        if(auth.user.userType.id===USER_TYPE.ADMIN)
             return <Redirect to='/admin/customers' />
         else
             return <Redirect to='/' />

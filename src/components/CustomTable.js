@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {  Table } from "reactstrap";
 import TableCellGeneric from './TableCellGeneric'
+import PropTypes from "prop-types";
 
 export default function CustomTable({header, data, columnsOrder}) {
     return (
@@ -30,3 +31,9 @@ export default function CustomTable({header, data, columnsOrder}) {
         </Table>
     )
 }
+
+CustomTable.propTypes = {
+    header: PropTypes.arrayOf(PropTypes.string),
+    data: PropTypes.array,
+    columnsOrder: PropTypes.arrayOf(PropTypes.string),
+  };
