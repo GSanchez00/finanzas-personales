@@ -49,7 +49,7 @@
                     "columnsOrder":
                                 ["month", "category", "debt"]
                     },
-       "proyeccion": {   
+    "proyeccion": {   
                     "data":
                                 [
                                     {"month":"Enero", "debtARS":"2346", "debtUSD":"200"}, 
