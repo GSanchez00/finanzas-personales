@@ -1,0 +1,37 @@
+[
+    {
+    "id":1, 
+    "name":"Javier Gonzales", 
+    "birthdate":"1987-08-22T10:00:00.000Z", 
+    "img":"https://randomuser.me/api/portraits/men/1.jpg", 
+    "userType": {
+      "id": 1,
+      "name": "Admin"
+    },
+    "email": "javier.gonzalez@example.com", "password": "123456"
+  },
+    {
+    "id":2, 
+    "name":"Carina Chann", 
+    "birthdate":"1990-08-22T00:20:15.000Z", 
+    "img":"https://randomuser.me/api/portraits/women/2.jpg", 
+    "userType": {
+      "id": 2,
+      "name": "Customer"
+    },
+    "email": "carina.chann@example.com", 
+    "password": "carina"
+  },
+  {
+    "id":3, 
+    "name":"Diego Roitman", 
+    "birthdate":"1985-08-22T00:16:07.000Z", 
+    "img":"https://randomuser.me/api/portraits/men/4.jpg", 
+    "userType": {
+      "id": 2,
+      "name": "Customer"
+    }, 
+    "email": "diego.roitman@example.com", 
+    "password": "diego"
+  }
+]

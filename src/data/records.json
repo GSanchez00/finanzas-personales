@@ -1,0 +1,64 @@
+{
+    "registros":    {
+                    "data":
+                                [
+                                    {"id":1, "type": {"id": 1, "description": "Ingreso"}, "category": {"id":1, "description": "Freelance"}, "currency": {"id":2, "description":"USD"}, "amount": 10000, "datetime":"2020-01-01T00:00:00.000Z"},
+                                    {"id":2, "type": {"id": 1, "description": "Ingreso"}, "category": {"id":2, "description": "Sueldo"},    "currency": {"id":1, "description":"ARS"}, "amount": 5346, "datetime":"2020-01-02T00:00:00.000Z"},
+                                    {"id":3, "type": {"id": 2, "description": "Egreso"}, "category":  {"id":3, "description": "Mercado"},   "currency": {"id":1, "description":"ARS"}, "amount": 1780, "datetime":"2020-01-02T00:00:00.000Z"},
+                                    {"id":4, "type": {"id": 2, "description": "Egreso"}, "category":  {"id":4, "description": "AWS"},       "currency": {"id":2, "description":"USD"}, "amount": 200, "datetime":"2020-01-03T00:00:00.000Z"},
+                                    {"id":5, "type": {"id": 2, "description": "Egreso"}, "category":  {"id":3, "description": "Mercado"},   "currency": {"id":1, "description":"ARS"}, "amount": 566, "datetime":"2020-01-04T00:00:00.000Z"},
+                                    {"id":6, "type": {"id": 1, "description": "Ingreso"}, "category": {"id":2, "description": "Sueldo"},    "currency": {"id":1, "description":"ARS"}, "amount": 5346, "datetime":"2020-02-01T00:00:00.000Z"},
+                                    {"id":7, "type": {"id": 2, "description": "Egreso"}, "category":  {"id":3, "description": "Mercado"},   "currency": {"id":1, "description":"ARS"}, "amount": 1780, "datetime":"2020-02-02T00:00:00.000Z"},
+                                    {"id":8, "type": {"id": 2, "description": "Egreso"}, "category":  {"id":4, "description": "AWS"},       "currency": {"id":2, "description":"USD"}, "amount": 30, "datetime":"2020-02-03T00:00:00.000Z"},
+                                    {"id":9, "type": {"id": 2, "description": "Egreso"}, "category":  {"id":5, "description": "Transporte"},"currency": {"id":1, "description":"ARS"}, "amount": 566, "datetime":"2020-02-04T00:00:00.000Z"},
+                                    {"id":10,"type": {"id": 2, "description": "Egreso"}, "category":  {"id":3, "description": "Mercado"},   "currency": {"id":1, "description":"ARS"}, "amount": 768, "datetime":"2020-02-04T00:00:00.000Z"}
+                                ],
+                    "headers":  
+                                ["Fecha", "Tipo", "Categoria", "Moneda", "Monto"],
+                    "columnsOrder":
+                                ["datetime", "type", "category", "currency", "amount"]
+                    },
+    "reporteDiario":{   
+                    "data":
+                                [
+                                    {"balance": "1000 USD", "debt": "-", "datetime":"2020-01-01T00:00:00.000Z"},
+                                    {"balance": "1000 USD + 3566 ARS", "debt": "1780 ARS", "datetime":"2020-01-02T00:00:00.000Z"},
+                                    {"balance": "800 USD + 3566 ARS", "debt": "200 USD", "datetime":"2020-01-03T00:00:00.000Z"},
+                                    {"balance": "800 USD + 3000 ARS", "debt": "566 ARS",  "datetime":"2020-01-04T00:00:00.000Z"},
+                                    {"balance": "800 USD + 8346 ARS", "debt": "-", "datetime":"2020-02-01T00:00:00.000Z"},
+                                    {"balance": "800 USD + 6566 ARS", "debt": "1780 ARS", "datetime":"2020-02-02T00:00:00.000Z"},
+                                    {"balance": "770 USD + 6566 ARS", "debt": "30 USD", "datetime":"2020-02-03T00:00:00.000Z"},
+                                    {"balance": "770 USD + 5232 ARS", "debt": "1334 ARS", "datetime":"2020-02-04T00:00:00.000Z"}
+                                ],
+                    "headers":  
+                                ["Fecha", "Gastos Diarios", "Balance"],
+                    "columnsOrder":
+                                ["datetime", "debt", "balance"]
+                    },
+    "reportePorCategoria":  {   
+                    "data":
+                                [
+                                    {"month":"Enero", "category": "Mercado", "debt": "2346 ARS"},
+                                    {"month":"Enero", "category": "AWS", "debt": "200 USD"},
+                                    {"month":"Febrero", "category": "Mercado", "debt": "2548 ARS"},
+                                    {"month":"Febrero", "category": "AWS", "debt": "30 USD"},
+                                    {"month":"Febrero", "category": "Transporte", "debt": "566 ARS"}
+                                ],
+                    "headers":  
+                                ["Mes", "Categoria", "Gastos"],
+                    "columnsOrder":
+                                ["month", "category", "debt"]
+                    },
+       "proyeccion": {   
+                    "data":
+                                [
+                                    {"month":"Enero", "debtARS":"2346", "debtUSD":"200"}, 
+                                    {"month":"Febrero", "debtARS":"3114", "debtUSD":"30"}, 
+                                    {"month":"Marzo","debtARS":"3882", "debtUSD":"0"}
+                                ],
+                    "headers":  
+                                ["Mes", "Gasto ARS", "Gasto USD"],
+                    "columnsOrder":
+                                ["month", "debtARS", "debtUSD"]
+                    }
+}
