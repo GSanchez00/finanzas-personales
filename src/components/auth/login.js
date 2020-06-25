@@ -54,7 +54,7 @@ const Login = ({auth}) =>
                       </div> 
                       </div> 
                       <div className="form-group">
-                      <button type="submit" className="btn btn-primary btn-block"> Login  </button>
+                      <button type="submit" className="btn btn-primary btn-block">Login</button>
                       </div> 
                       {auth.isError && <div className="text-danger text-center">User or Password incorrect!</div>}
                       </form>
