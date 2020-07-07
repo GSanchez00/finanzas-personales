@@ -1,8 +1,8 @@
 import React, { useReducer, useEffect } from 'react';
 import Loading from './loading'
 import axios from 'axios'
-import { Table } from "reactstrap";
 import {Titulo} from './styledCommon'
+import CustomTable from './CustomTable';
 
 const initialData = [];
 const dataGetReducer = (state, action) => {
@@ -55,30 +55,10 @@ const dataGetReducer = (state, action) => {
         <div style={{margin:"5%"}}>
             <Titulo>Monedas</Titulo>
             {fetchState.data && fetchState.data.length > 0 && 
-            <Table responsive>
-                <thead>
-                    <tr>
-                        {
-                            headers.map((el, key)=>
-                            (
-                                <th key={key}>{el}</th> 
-                            ))
-                        }
-                    </tr>
-                </thead>
-                <tbody>
-                {
-                    fetchState.data.map((cell, key) => {
-                    return (
-                        <tr key={key}>
-                            <td>{cell.id}</td>
-                            <td>{cell.description}</td>
-                        </tr>
-                        );
-                    })
-                }
-                </tbody>
-            </Table>
+              <CustomTable 
+              header={headers} 
+              data={fetchState.data} 
+              columnsOrder={[{column:'id', type:"string"},{column: 'description', type:"string"}]} />
             }
             <Loading visible={fetchState.isLoading} />
         </div>

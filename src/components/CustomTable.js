@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {  Table } from "reactstrap";
+import { Table } from "reactstrap";
 import TableCellGeneric from './TableCellGeneric'
 import PropTypes from "prop-types";
 

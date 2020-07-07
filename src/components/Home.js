@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useState } from 'react';
+import React, { useReducer, useEffect} from 'react';
 import CustomTable from './CustomTable';
 import Loading from './loading'
 import axios from 'axios'

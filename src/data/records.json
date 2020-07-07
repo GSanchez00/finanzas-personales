@@ -16,7 +16,7 @@
                     "headers":  
                                 ["Fecha", "Tipo", "Categoria", "Moneda", "Monto"],
                     "columnsOrder":
-                                ["datetime", "type", "category", "currency", "amount"]
+                                [{"column": "datetime", "type":"date"},{"column": "type", "type":"object", "data":"description"},{"column": "category", "type":"object", "data":"description"},{"column": "currency", "type":"object", "data":"description"},{"column": "amount", "type":"string"}]
                     },
     "reporteDiario":{   
                     "data":
@@ -33,7 +33,7 @@
                     "headers":  
                                 ["Fecha", "Gastos Diarios", "Balance"],
                     "columnsOrder":
-                                ["datetime", "debt", "balance"]
+                                [{"column": "datetime", "type":"date"},{"column": "debt", "type":"string"},{"column": "balance", "type":"string"}]
                     },
     "reportePorCategoria":  {   
                     "data":
@@ -47,7 +47,7 @@
                     "headers":  
                                 ["Mes", "Categoria", "Gastos"],
                     "columnsOrder":
-                                ["month", "category", "debt"]
+                                [{"column": "month", "type":"string"},{"column": "category", "type":"string"},{"column": "debt", "type":"string"}]
                     },
     "proyeccion": {   
                     "data":
@@ -59,6 +59,6 @@
                     "headers":  
                                 ["Mes", "Gasto ARS", "Gasto USD"],
                     "columnsOrder":
-                                ["month", "debtARS", "debtUSD"]
+                                [{"column": "month", "type":"string"},{"column": "debtARS", "type":"string"},{"column": "debtUSD", "type":"string"}]
                     }
 }

@@ -1,9 +1,8 @@
 import React, { useReducer, useEffect } from 'react';
 import Loading from './loading'
 import axios from 'axios'
-import { Table } from "reactstrap";
-import {formatDDMMYYYY} from "../helpers/dateHelper";
 import {Titulo} from './styledCommon'
+import CustomTable from './CustomTable';
 
 const initialData = [];
 const dataGetReducer = (state, action) => {
@@ -56,32 +55,10 @@ const dataGetReducer = (state, action) => {
         <div style={{margin:"5%"}}>
             <Titulo>Clientes</Titulo>
             {fetchState.data && fetchState.data.length > 0 && 
-            <Table responsive>
-                <thead>
-                    <tr>
-                        {
-                            headers.map((el, key)=>
-                            (
-                                <th key={key}>{el}</th> 
-                            ))
-                        }
-                    </tr>
-                </thead>
-                <tbody>
-                {
-                    fetchState.data.map((cell, key) => {
-                    return (
-                        <tr key={key}>
-                            <td>{cell.name}</td>
-                            <td>{formatDDMMYYYY(cell.birthdate)}</td>
-                            <td>{cell.email}</td>
-                            <td><img src={cell.img}  width="67" height="50" alt="" /></td>
-                        </tr>
-                        );
-                    })
-                }
-                </tbody>
-            </Table>
+              <CustomTable 
+              header={headers} 
+              data={fetchState.data} 
+              columnsOrder={[{column:'name', type:"string"},{column: 'birthdate', type:"date"},{column: 'email', type:"string"},{column: 'img', type:"img"}]} />
             }
             <Loading visible={fetchState.isLoading} />
         </div>

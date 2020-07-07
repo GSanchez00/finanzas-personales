@@ -3,11 +3,11 @@ export const initialState={
   isError: false,
   data: [],
   currentData: {},
-  titulo: "Reporde de Todos los registros"
+  titulo: "Reporte de Todos los registros"
 }
 
 export const DataRecordsReducer = (state, action) => {
-    switch (action.type) {
+  switch (action.type) {
       case 'FETCH_INIT':
         return {
           ...state,
